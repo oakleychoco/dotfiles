@@ -25,6 +25,7 @@ brew install --cask maccy
 brew install --cask 1password
 brew install --cask arc
 brew install --cask tableplus
+brew install --cask telegram
 
 brew install --cask aws-vpn-client
 brew install --cask 1password-cli
