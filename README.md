@@ -15,7 +15,7 @@ xcode-select --install
 
 ### Step 2: Download dotfiles from git repository
 ```sh
-git clone https://github.com/luckily/dotfiles.git ~/.dotfiles
+git clone https://github.com/oakleychoco/dotfiles.git ~/.dotfiles
 ```
 
 ### Step 3: Install my dotfiles for the first time.
