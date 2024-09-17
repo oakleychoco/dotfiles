@@ -156,5 +156,3 @@ fi
 # Additional settings
 [[ -e $HOME/.dotfiles/configs/.workrc ]] && source $HOME/.dotfiles/configs/.workrc
 
-success '🔱 Load [zsh] successful. 🔱'
-

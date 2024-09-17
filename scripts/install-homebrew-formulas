@@ -8,43 +8,37 @@ brew install gcc openssl readline xz zlib tcl-tk coreutils
 brew install git wget curl tree jq yq tldr ipcalc redis sqlite3 awscli
 
 
-# These are dependencies of PHP.
-# @see https://github.com/asdf-community/asdf-php#macos
-# @see https://github.com/asdf-community/asdf-php/blob/248e9c6e2a7824510788f05e8cee848a62200b65/.github/workflows/workflow.yml#L52
-brew install gmp libsodium imagemagick
-brew install autoconf automake bison freetype gd gettext icu4c krb5 libedit libiconv libjpeg libpng libxml2 libzip pkg-config re2c zlib
-
 
 # @see https://github.com/ggreer/the_silver_searcher ag
 brew install the_silver_searcher
 
+brew install ffmpeg
 
-# @see https://graphviz.org/doc/info/command.html
-brew install svn
-brew install graphviz
-
-
-brew install --cask github
-brew install --cask slack
-brew install --cask iterm2
-brew install --cask docker
-brew install --cask visual-studio-code
-brew install --cask brave-browser
-brew install --cask postman
-brew install --cask alfred
-brew install --cask shottr
-brew install --cask maccy
 brew install --cask 1password
-brew install --cask notion
-brew install --cask google-chrome
-brew install --cask homebrew/cask-versions/sequel-pro-nightly
+brew install --cask adguard
+brew install --cask appcleaner
+brew install --cask arc
+brew install --cask aws-vpn-client
+brew install --cask discord
+brew install --cask orbstack
+brew install --cask raycast
+brew install --cask postman
+brew install --cask slack
+brew install --cask shottr
+brew install --cask tableplus
+brew install --cask telegram
+brew install --cask visual-studio-code
+brew install --cask warp
 
-
-# brew install ffmpeg
-# brew install --cask aws-vpn-client
-# brew install --cask 1password-cli
-# brew install --cask virtualbox
-
+# install fonts
+brew tap homebrew/cask-fonts
+# terminal fonts
+brew install --cask font-cascadia-code
+brew install --cask font-cascadia-code-pl
+brew install --cask font-cascadia-mono
+brew install --cask font-cascadia-mono-pl
+# IDE fonts
+brew install --cask font-fira-code
 
 success "Install homebrew packages successful."
 exit 0
