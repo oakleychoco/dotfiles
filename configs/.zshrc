@@ -156,3 +156,20 @@ fi
 # Additional settings
 [[ -e $HOME/.dotfiles/configs/.workrc ]] && source $HOME/.dotfiles/configs/.workrc
 
+alias mise-x64="$HOME/.local/bin/mise-x64"
+
+vpn_force_setting_choco(){
+   default_gateway_ip=$(netstat -rn | grep "Internet:" -A 20 | grep default | grep en0 | awk '{print $2}')
+   netstat -rn | grep "Internet:" -A 20
+   sudo route delete -net 0.0.0.0 ${default_gateway_ip} 0.0.0.0
+   sudo route add -net 0.0.0.0 192.168.1.2 0.0.0.0
+   netstat -rn | grep "Internet:" -A 20
+}
+
+vpn_force_setting_home(){
+   default_gateway_ip=$(netstat -rn | grep "Internet:" -A 20 | grep default | grep en0 | awk '{print $2}')
+   netstat -rn | grep "Internet:" -A 20
+   sudo route delete -net 0.0.0.0 ${default_gateway_ip} 0.0.0.0
+   sudo route add -net 0.0.0.0 192.168.50.1 0.0.0.0
+   netstat -rn | grep "Internet:" -A 20
+}
