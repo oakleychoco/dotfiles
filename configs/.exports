@@ -31,4 +31,5 @@ export LANG="en_US"
 # The sdkman(Java version management) environment variable
 export SDKMAN_DIR="$HOME/.dotfiles/.sdkman"
 
-
+# For AWS CLI Pager
+export AWS_PAGER=""
