@@ -7,8 +7,6 @@ source $HOME/.dotfiles/configs/.zshrc
 brew install gcc openssl readline xz zlib tcl-tk coreutils
 brew install git wget curl tree jq yq tldr ipcalc redis sqlite3 awscli
 
-
-
 # @see https://github.com/ggreer/the_silver_searcher ag
 brew install the_silver_searcher
 
@@ -18,10 +16,9 @@ brew install --cask 1password
 brew install --cask adguard
 brew install --cask appcleaner
 brew install --cask aws-vpn-client
-brew install --cask chatgpt
 brew install --cask cursor
-brew install --cask discord
 brew install --cask eloston-chromium
+brew install --cask messenger
 brew install --cask orbstack
 brew install --cask postman
 brew install --cask raycast
@@ -29,7 +26,6 @@ brew install --cask shottr
 brew install --cask slack
 brew install --cask tableplus
 brew install --cask telegram
-brew install --cask visual-studio-code
 brew install --cask warp
 brew install --cask zen-browser
 
