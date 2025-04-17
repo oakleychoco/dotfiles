@@ -17,12 +17,25 @@
     "terminal.integrated.lineHeight": 1.4,
     "prettier.jsxSingleQuote": true,
     "prettier.singleQuote": true,
-    "go.goroot": "/Users/oakley/.local/share/mise/installs/go/1.23.4",
+    "go.goroot": "/Users/oakley/.local/share/mise/installs/go/1.24.2",
     "[go]": {
       "editor.defaultFormatter": "golang.go"
     },
     "files.exclude": {
       "**/node_modules": true
+    },
+    "files.associations": {
+      ".env*": "dotenv"
+    },
+    "editor.tokenColorCustomizations": {
+      "textMateRules": [
+        {
+          "scope": "keyword.other.dotenv",
+          "settings": {
+            "foreground": "#FF000000"
+          }
+        }
+      ]
     }
   }
   
