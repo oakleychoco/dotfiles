@@ -25,7 +25,9 @@
       "**/node_modules": true
     },
     "files.associations": {
-      ".env*": "dotenv"
+      ".env*": "dotenv",
+      ".prettierrc": "yaml",
+      ".eslintrc": "yaml"
     },
     "editor.tokenColorCustomizations": {
       "textMateRules": [

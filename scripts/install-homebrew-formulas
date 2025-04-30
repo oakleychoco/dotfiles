@@ -13,6 +13,7 @@ brew install the_silver_searcher
 brew install ffmpeg
 
 brew install --cask 1password
+brew install --cask 1password-cli
 brew install --cask adguard
 brew install --cask appcleaner
 brew install --cask aws-vpn-client
@@ -21,6 +22,7 @@ brew install --cask eloston-chromium
 brew install --cask messenger
 brew install --cask orbstack
 brew install --cask postman
+brew install --cask pronotes
 brew install --cask raycast
 brew install --cask shottr
 brew install --cask slack
