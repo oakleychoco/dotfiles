@@ -23,7 +23,7 @@ if [[ -z $(command -v brew) ]];then
     info "Start to install Homebrew"
 
     mkdir -p $DOTFILES_PATH/.homebrew && \
-    curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C $DOTFILES_PATH/.homebrew && \
+    curl -L https://github.com/Homebrew/brew/tarball/main | tar xz --strip 1 -C $DOTFILES_PATH/.homebrew && \
     chmod +x $DOTFILES_PATH/.homebrew/bin/brew && \
     success "Install Homebrew successful."
 fi
