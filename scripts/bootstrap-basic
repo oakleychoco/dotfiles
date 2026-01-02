@@ -22,8 +22,7 @@ symlink $HOME/.dotfiles/configs/.zshrc $HOME/.zshrc
 if [[ -z $(command -v brew) ]];then
     info "Start to install Homebrew"
 
-    mkdir -p $DOTFILES_PATH/.homebrew && \
-    curl -L https://github.com/Homebrew/brew/tarball/main | tar xz --strip 1 -C $DOTFILES_PATH/.homebrew && \
+    git clone --depth=1 https://github.com/Homebrew/brew $DOTFILES_PATH/.homebrew && \
     chmod +x $DOTFILES_PATH/.homebrew/bin/brew && \
     success "Install Homebrew successful."
 fi
