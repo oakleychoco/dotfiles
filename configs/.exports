@@ -26,10 +26,13 @@ export HOMEBREW_CELLAR=$HOMEBREW_PREFIX/Cellar
 
 # You may need to manually set your language environment
 export LC_ALL="en_US.UTF-8"
-export LANG="en_US"
+export LANG="en_US.UTF-8"
 
 # The sdkman(Java version management) environment variable
 export SDKMAN_DIR="$HOME/.dotfiles/.sdkman"
+
+# Disable Homebrew analytics
+export HOMEBREW_NO_ANALYTICS=1
 
 # For AWS CLI Pager
 export AWS_PAGER=""

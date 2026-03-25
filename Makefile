@@ -28,19 +28,14 @@ reconfigure:
 
 cleanup:
 	rm -rf ../.sdkman ../.oh-my-zsh ../.zshrc.pre-oh-my-zsh ../.zshrc ../.bash_profile .bin .homebrew .sdkman
-	find $HOME -iname '.bash_profile.backup*' -or -iname '.zshrc.backup*' -maxdepth 1 | xargs rm
+	find $$HOME -maxdepth 1 \( -iname '.bash_profile.backup*' -o -iname '.zshrc.backup*' \) | xargs rm
 
 
 debug-zsh: SHELL:=/bin/zsh
 debug-zsh:
-	source $$HOME/.dotfiles/configs/.zshrc
-	printenv
+	source $$HOME/.dotfiles/configs/.zshrc && printenv
 
 
 debug-bash: SHELL:=/bin/bash
 debug-bash:
-	source $$HOME/.dotfiles/configs/.bash_profile
-	printenv
-
-
-
+	source $$HOME/.dotfiles/configs/.bash_profile && printenv

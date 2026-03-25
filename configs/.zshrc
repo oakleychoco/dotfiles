@@ -5,19 +5,7 @@ source $HOME/.dotfiles/configs/.exports
 source $HOME/.dotfiles/configs/.functions
 
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/.dotfiles/.homebrew/bin:$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
-# export ZSH="$HOME/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-# ZSH_THEME="spaceship"
-# Support Warp terminal
+# Theme: spaceship for most terminals, robbyrussell for Warp
 if [[ $TERM_PROGRAM != "WarpTerminal" ]];then
    ZSH_THEME="spaceship"
 else
@@ -57,58 +45,7 @@ SPACESHIP_PROMPT_ORDER=(
 )
 
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+# Plugins
 plugins=(git docker docker-compose kubectl kops minikube helm aws zsh-completions zsh-autosuggestions zsh-syntax-highlighting)
 
 
@@ -118,22 +55,12 @@ fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 [[ -e $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh
 
 
-# Compilation flags. x86_64 for intel and arm64 for apple m1, m2
+# Compilation flags: x86_64 for intel, arm64 for apple silicon
 if [[ "$(uname -m)" == "arm64" ]];then
    export ARCHFLAGS="-arch arm64"
 else
    export ARCHFLAGS="-arch x86_64"
 fi
-
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
 # The multiple runtime version management
@@ -143,33 +70,15 @@ fi
 [[ -e $HOME/.dotfiles/.sdkman/bin/sdkman-init.sh ]] && source $HOME/.dotfiles/.sdkman/bin/sdkman-init.sh
 
 
-# Run below commands to install pyenv into your shell as a shell function, enable shims and autocompletion.
-# The $PYENV_ROOT environment is in .exports file
+# Pyenv
 # @see https://github.com/pyenv/pyenv#set-up-your-shell-environment-for-pyenv
-# export PYENV_ROOT="$HOME/.dotfiles/.pyenv"
-# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 if [[ $(command -v pyenv) ]];then
    eval "$(pyenv init -)"
 fi
 
 
-# Additional settings
+# Additional settings (work-related, gitignored)
 [[ -e $HOME/.dotfiles/configs/.workrc ]] && source $HOME/.dotfiles/configs/.workrc
 
-alias mise-x64="$HOME/.local/bin/mise-x64"
-
-vpn_force_setting_choco(){
-   default_gateway_ip=$(netstat -rn | grep "Internet:" -A 20 | grep default | grep en0 | awk '{print $2}')
-   netstat -rn | grep "Internet:" -A 20
-   sudo route delete -net 0.0.0.0 ${default_gateway_ip} 0.0.0.0
-   sudo route add -net 0.0.0.0 192.168.1.2 0.0.0.0
-   netstat -rn | grep "Internet:" -A 20
-}
-
-vpn_force_setting_home(){
-   default_gateway_ip=$(netstat -rn | grep "Internet:" -A 20 | grep default | grep en0 | awk '{print $2}')
-   netstat -rn | grep "Internet:" -A 20
-   sudo route delete -net 0.0.0.0 ${default_gateway_ip} 0.0.0.0
-   sudo route add -net 0.0.0.0 192.168.50.1 0.0.0.0
-   netstat -rn | grep "Internet:" -A 20
-}
+# Kaku Shell Integration
+[[ -f "/Users/oakley/.config/kaku/zsh/kaku.zsh" ]] && source "/Users/oakley/.config/kaku/zsh/kaku.zsh"

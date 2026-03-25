@@ -4,7 +4,7 @@
     "editor.fontSize": 16,
     "editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
     "editor.tabSize": 2,
-    "editor.fontLigatures": "'Fira Code', Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
     "editor.letterSpacing": 0.4,
     "editor.smoothScrolling": true,
     "editor.formatOnSave": false,
@@ -17,7 +17,6 @@
     "terminal.integrated.lineHeight": 1.4,
     "prettier.jsxSingleQuote": true,
     "prettier.singleQuote": true,
-    "go.goroot": "/Users/oakley/.local/share/mise/installs/go/1.24.2",
     "[go]": {
       "editor.defaultFormatter": "golang.go"
     },

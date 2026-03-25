@@ -17,5 +17,10 @@
         "key": "cmd+i",
         "command": "editor.action.goToImplementation",
         "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "alt+cmd+s",
+        "command": "workbench.action.toggleUnifiedSidebarFromKeyboard",
+        "when": "cursor.agentIdeUnification.enabled == true && !isAuxiliaryWindowFocusedContext"
     }
 ]

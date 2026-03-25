@@ -1,20 +1,18 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 # Initial settings
 source $HOME/.dotfiles/configs/.bash_profile
 
 
 # For some manually install tools need to install in `.bin` folder.
-mkdir $HOME/.dotfiles/.bin
+mkdir -p $HOME/.dotfiles/.bin
 
 info "Start to Symlink .bash_profile and .zshrc"
 backup $HOME/.bash_profile
 backup $HOME/.zshrc
 symlink $HOME/.dotfiles/configs/.bash_profile $HOME/.bash_profile
 symlink $HOME/.dotfiles/configs/.zshrc $HOME/.zshrc
-
-# ln -sf $HOME/.dotfiles/configs/.bash_profile $HOME/.bash_profile
-# ln -sf $HOME/.dotfiles/configs/.zshrc $HOME/.zshrc
 
 
 # Install homebrew without sudo.
@@ -41,7 +39,7 @@ fi
 
 
 # Start to use zsh
-command -v zsh > /dev/null 2>&1 # Check if brew not working
+command -v zsh > /dev/null 2>&1
 if [ $? != 0 ];then
     fail "zsh failed."
 fi

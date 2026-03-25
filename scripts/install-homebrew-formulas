@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+set -euo pipefail
 
 # Initial settings
 source $HOME/.dotfiles/configs/.zshrc
@@ -11,26 +12,25 @@ brew install git wget curl tree jq yq tldr ipcalc redis sqlite3 awscli
 brew install the_silver_searcher
 
 brew install ffmpeg
+brew install mole
 
 brew install --cask 1password
 brew install --cask adguard
-brew install --cask appcleaner
 brew install --cask aws-vpn-client
-brew install --cask cursor
-brew install --cask cursor-cli
-brew install --cask eloston-chromium
+brew install --cask claude
+brew install --cask claude-code
+brew install --cask kakuku
 brew install --cask orbstack
 brew install --cask postman
 brew install --cask raycast
 brew install --cask shottr
 brew install --cask slack
-brew install --cask tableplus
-brew install --cask telegram
-brew install --cask thebrowsercompany-dia
-brew install --cask warp
+brew install --cask tablepro
+brew install --cask ungoogled-chromium
+brew install --cask vscodium
+brew install --cask zed
 
-# install fonts
-brew tap homebrew/cask-fonts
+# install fonts (homebrew/cask-fonts tap is no longer needed)
 # terminal fonts
 brew install --cask font-cascadia-code
 brew install --cask font-cascadia-code-pl

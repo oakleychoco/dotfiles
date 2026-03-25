@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+set -euo pipefail
 
 # Initial settings
 source $HOME/.dotfiles/configs/.zshrc
@@ -26,4 +27,4 @@ installer -pkg AWSCLIV2.pkg \
             -target CurrentUserHomeDirectory \
             -applyChoiceChangesXML awscli-version.xml
 
-rm AWSCLIV2.pkg
+rm -f AWSCLIV2.pkg awscli-version.xml
